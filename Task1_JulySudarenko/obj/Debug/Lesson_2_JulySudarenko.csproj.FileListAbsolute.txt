@@ -1,0 +1,6 @@
+D:\geekbrains.ru\Projects\Lvl1_JulySudarenko\hwJulySudarenko\Task1_JulySudarenko\obj\Debug\Lesson_2_JulySudarenko.csprojAssemblyReference.cache
+D:\geekbrains.ru\Projects\Lvl1_JulySudarenko\hwJulySudarenko\Task1_JulySudarenko\bin\Debug\Task1_JulySudarenko.exe.config
+D:\geekbrains.ru\Projects\Lvl1_JulySudarenko\hwJulySudarenko\Task1_JulySudarenko\bin\Debug\Task1_JulySudarenko.exe
+D:\geekbrains.ru\Projects\Lvl1_JulySudarenko\hwJulySudarenko\Task1_JulySudarenko\bin\Debug\Task1_JulySudarenko.pdb
+D:\geekbrains.ru\Projects\Lvl1_JulySudarenko\hwJulySudarenko\Task1_JulySudarenko\obj\Debug\Task1_JulySudarenko.exe
+D:\geekbrains.ru\Projects\Lvl1_JulySudarenko\hwJulySudarenko\Task1_JulySudarenko\obj\Debug\Task1_JulySudarenko.pdb
