@@ -22,6 +22,8 @@ namespace Lesson_1_JulySudarenko
         //а. склеивание
         //б. форматированный вывод
         //в. вывод со знаком $
+        
+        
         private static void Task1and2()
         {
             Console.WriteLine("Доброго дня! Вас приветствует программа Анкета. Пожалуйста, напишите ваше имя: ");//Будет перенос строки.
@@ -46,6 +48,8 @@ namespace Lesson_1_JulySudarenko
         //2. Рассчитать и вывести индекс массы тела. Формула: BMI = m / (h * h). m = масса тела в килограммах, h = рост в метрах.
         //Входные параметры uint weight в килограммах, float heightMetre в сантиметрах.
         //Выходной параметр float BodyMassIndex (BMI).
+        
+        
         private static float BodyMassIndex(uint weight, float heightMetre)
         {
             return weight / (heightMetre * heightMetre);
@@ -53,15 +57,19 @@ namespace Lesson_1_JulySudarenko
         //3. Программа, которая подсчитывает расстояние между точками с координатами x1, x2, y1, y2.
         //а. Вывести результат, используя спецификатор .2f.
         //б. Оформить в виде метода
+        
+        
         private static void Task3()
         {
-            double x1 = 105d;
-            double x2 = 237d;
+            double x1 = 105.00d;
+            double x2 = 237.00d;
             double y1 = 47.67d;
             double y2 = 67.34d;
             Console.WriteLine($"Координаты первой точки ({x1};{y1}).\nКоординаты второй точки ({x2};{y2}).\n" +
                 $"В результате вычислений получаем расстояние между точками {Pifagor(x1, x2, y1, y2):f}");
         }
+        
+        
         private static double Pifagor(double x1, double x2, double y1, double y2)
         {
             return Math.Sqrt(Math.Pow(x2 - x1, 2) + Math.Pow(y2 - y1, 2));
@@ -99,6 +107,8 @@ namespace Lesson_1_JulySudarenko
         //5.а.Написать программу, которая выводит на экран мое имя, фамилию и город проживание.
         //б. Сделать вывод в центре экрана.
         //в. Сделать задание с использованием собственных методов.
+        
+        
         private static void Task5()
         {
             Console.Clear();//Если не почистить экран текст наползает друг на друга.
@@ -110,6 +120,8 @@ namespace Lesson_1_JulySudarenko
             MyPrint.PrintXY(homecity, x - homecity.Length / 2, y + 1);
         }
         //6. Создать класс с методами, которые могут пригодиться в учебе (Print, Pause).
+        
+        
         class MyPrint
         {
         //Перемещает курсор в точку с координатами (x, y). И выводит сообщение на экран.
@@ -118,6 +130,8 @@ namespace Lesson_1_JulySudarenko
                 Console.SetCursorPosition(x, y);
                 Console.WriteLine(message);
             }
+        
+            
         //Пауза
             public static void Pause()
             {

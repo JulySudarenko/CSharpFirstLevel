@@ -5,13 +5,16 @@ using System.Text;
 using System.Threading.Tasks;
 using static System.Console;//далее можно не писать Console.
 
-namespace Lesson2_CSharp_Lvl1
+namespace Lesson_2_CSharp_Lvl1
 {
     public class ViewJulyS
     {
-        public static void Print(object value) 
+        public static void Print(object value, bool isNewLine = true) 
         {
-            WriteLine(value);        
+            if (isNewLine)
+                WriteLine(value);
+            else
+                Write(value);
         }
         
         public static int GetInt()
