@@ -48,8 +48,8 @@ namespace Lesson_1_JulySudarenko
         //2. Рассчитать и вывести индекс массы тела. Формула: BMI = m / (h * h). m = масса тела в килограммах, h = рост в метрах.
         //Входные параметры uint weight в килограммах, float heightMetre в сантиметрах.
         //Выходной параметр float BodyMassIndex (BMI).
-        
-        
+
+
         private static float BodyMassIndex(uint weight, float heightMetre)
         {
             return weight / (heightMetre * heightMetre);

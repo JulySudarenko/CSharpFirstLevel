@@ -31,5 +31,10 @@ namespace Lesson_2_CSharp_Lvl1
         {
             ReadKey();
         }
+        public static void PrintXY(string message, int x, int y)
+        {
+            Console.SetCursorPosition(x, y);
+            Console.WriteLine(message);
+        }
     }
 }
