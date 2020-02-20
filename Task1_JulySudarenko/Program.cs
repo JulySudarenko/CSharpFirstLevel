@@ -14,14 +14,14 @@ namespace Lesson_2_JulySudarenko_HomeWork
 
         static void Main(string[] args)
         {
-            //Task1();
-            //Task2(); //через цикл
+            Task1();
+            Task2(); //через цикл
             //Task2Convert(); //через конвертацию в строку
-            //Task3();
-            //Task4();
-            //Task5();
-            //Task6();
-            //Task7();
+            Task3();
+            Task4();
+            Task5();
+            Task6();
+            Task7();
             Pause();
         }
 
@@ -31,12 +31,13 @@ namespace Lesson_2_JulySudarenko_HomeWork
 
         private static void Task1()
         {
-            Print("Введите первое число");
+            Print("Введите первое число: " , false);
             int a = GetInt();
-            Print("Введите второе число");
+            Print("Введите первое число: ", false);
             int b = GetInt();
-            Print("Введите третье число");
+            Print("Введите первое число: ", false);
             int с = GetInt();
+            
             Print($"Минимальное число: {MinNumberTerm(a, b, с)}.");//При помощи тернарного оператора
             Print(MinNumberIf1(a, b, с));//При помощи условий
             Print(MinNumberIf2(a, b, с));
@@ -48,7 +49,6 @@ namespace Lesson_2_JulySudarenko_HomeWork
             int min = a < b ? a : b;
             //return _ = c < min ? c : min; //Работает, но я не до конца поняла как... "_ =" - надо почитать.
             return c < min ? c : min;
-
         }
 
         //Вложенные условия. И без ввода переменной min.
@@ -66,25 +66,24 @@ namespace Lesson_2_JulySudarenko_HomeWork
                     return c;
         }
         
+        //Тоже самое с использованием &&
         private static int MinNumberIf2(int a, int b, int c)
         {
-            int min = a;
-            if (min <= b && min <= c)
-                return min;
-            else 
-                if (b < min && b <= c)
-                    return _= b;
+            if (a <= b && a <= c)
+                return a;
+            else
+                if (b <= c)
+                    return b;
                 else 
-                    return _= c;
+                    return c;
         }
 
 
-        //2. написать метод подсчета количества цифр числа.
 
-        //Если вводить слишком большое число ругается. Вопрос как проверить вводимые данные?
+        //2. написать метод подсчета количества цифр числа.
         private static void Task2()
         {
-            Print("Введите число");
+            Print("Введите число побольше: ", false);
             ulong num = Convert.ToUInt64(Console.ReadLine());
             int count = 0;
             while (num != 0)
@@ -92,23 +91,21 @@ namespace Lesson_2_JulySudarenko_HomeWork
                 count++;
                 num /= 10;
             }
-            Print(count);
+            Print($"Количество цифр в числе: {count}."); ;
         }
 
-        //Считает через конвертацию и измерению длины строки.
+        //Считаем через конвертацию и измерению длины строки.
         private static void Task2Convert() 
         {
-            Print("Введите число");
+            Print("Введите число побольше: ", false);
             ulong t = Convert.ToUInt64(Console.ReadLine());
             string s = Convert.ToString(t);
             int i = s.Length;
             Print($"Количество цифр в числе: {i}.");
         }
 
-        
-        
+       
         //3. С клавиатуры вводятся числа, пока не будет введен 0. Подсчитать сумму всех нечетных положительных чисел.
-        // Можно ли сделать через while? Сделать рекурсию.
         private static void Task3()
         {
             int a;
@@ -119,33 +116,26 @@ namespace Lesson_2_JulySudarenko_HomeWork
                 a = GetInt();
                 if (a % 2 != 0 && a > 0)
                     result += a;
+                else
+                    continue;
             }
             while (a != 0);
             Print($"Сумма нечетных положительных чисел: {result}.");
+            //Для проверки можно использовать последовательность: 37, 90, 23, 8, -77, 0. Сумма 60.
         }
-        //private static void Task3Recorsion(int a, int result)
-        //{
+        
 
-        //    a = GetInt();
-        //    if (a % 2 != 0 && a > 0)
-        //        result += a;
-
-
-        //}
-
-
-
-
-        /*4. Реализовать метод проверки логина и пароля.
+        /*
+        * 4. Реализовать метод проверки логина и пароля.
         * На вход метода подается логин и пароль.
         * На выходе истина, если прошел авторизацию, и ложь, если не прошел.
-        * Логин: root.Password: GeekBrains.
+        * Логин: root. Password: GeekBrains.
         * Используя метод логина и пароля написать программу: 
         * пользователь вводит логин и пароль, программа пропускает его дальше или не пропускает.
         * С помощью цикла do while ограничить ввод пароля тремя попытками.*/
 
          private static void Task4()
-        {
+         {
             string login = "root";
             string password = "GeekBrains";
             
@@ -160,9 +150,7 @@ namespace Lesson_2_JulySudarenko_HomeWork
                     Print("Доступ разрешен");
                 else
                     Print("В доступе отказано");
-
-            
-        }
+         }
 
         //Решение через цикл do while
         private static bool CheckLoginPassword(string login, string password)
@@ -181,11 +169,13 @@ namespace Lesson_2_JulySudarenko_HomeWork
                     v = true;
                     break;
                 }
-                else
+                else if (tryCount > 1)
                 {
                     Print("Не верно. Попробуйте еще раз.");
                     --tryCount;
                 }
+                else
+                    --tryCount;
 
             } 
             while (tryCount > 0);
@@ -216,6 +206,9 @@ namespace Lesson_2_JulySudarenko_HomeWork
             }
 
         }
+        
+        
+        
         /*
         * 5. а) Написать программу, которая запрашивает массу и рост человека, 
         * вычисляет его индекс массы тела и
@@ -250,6 +243,7 @@ namespace Lesson_2_JulySudarenko_HomeWork
         }
 
 
+        
         /* 
         * 6. *Написать программу подсчета количества "хороших" чисел 
         * в диапазоне от 1 до 1 000 000 000.
@@ -258,6 +252,7 @@ namespace Lesson_2_JulySudarenko_HomeWork
 
         private static void Task6()
         {
+            Print("Программа считает, пожалуйста, подождите. Это займет не более 2х минут.");
             DateTime start = DateTime.Now;
             int count = 0;
             int i = 1;
@@ -271,9 +266,12 @@ namespace Lesson_2_JulySudarenko_HomeWork
             Print($"Количество \"хороших\" чисел: {count}. Время выполнения программы: {finish - start}.");
         }
         //Итог: Количество "хороших" чисел: 61574510. Время выполнения программы: 00:01:31.1172032.
+        //Можно ли через некоторые промежутки времени выдавать пользователю % выполнения?
 
 
-        /* 7. а) Разработать рекурсивный метод, который выводит на экран числа от a до b (a < b). 
+        
+        /* 
+        * 7. а) Разработать рекурсивный метод, который выводит на экран числа от a до b (a < b). 
         * б) *Разработать рекурсивный метод, который считает сумму чисел от a до b. */
         private static void Task7()
         {
@@ -288,13 +286,27 @@ namespace Lesson_2_JulySudarenko_HomeWork
             }
             //int b = GetB(a); //Решение через рекурсию.
             SeriesOfNumber(a, b);
+            Print($"\nСумма чисел от a до b равна: {SumSeriesOfNumbers(a, b)}.");
+            //Для проверки a = 2, b = 10. Сумма 54.
         }
+
+
+        //считает сумму чисел от a до b.
+        private static int SumSeriesOfNumbers(int a, int b)
+        {
+            if (a < b)
+                return SumSeriesOfNumbers(a + 1, b) + a;
+            else
+                return a;
+        }
+
+
+        //выводит на экран числа от a до b (a < b)
         private static void SeriesOfNumber(int a, int b)
         {
-            Console.Write("{0, 4} ", a);
+            Console.Write("{0} ", a);
             if (a < b) 
                 SeriesOfNumber(a + 1, b);
-
         }
 
 
