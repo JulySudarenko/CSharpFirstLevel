@@ -33,9 +33,9 @@ namespace Lesson_2_JulySudarenko_HomeWork
         {
             Print("Введите первое число: " , false);
             int a = GetInt();
-            Print("Введите первое число: ", false);
+            Print("Введите второе число: ", false);
             int b = GetInt();
-            Print("Введите первое число: ", false);
+            Print("Введите третье число: ", false);
             int с = GetInt();
             
             Print($"Минимальное число: {MinNumberTerm(a, b, с)}.");//При помощи тернарного оператора
