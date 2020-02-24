@@ -33,9 +33,9 @@ namespace Lesson_2_JulySudarenko_HomeWork
         {
             Print("Введите первое число: " , false);
             int a = GetInt();
-            Print("Введите первое число: ", false);
+            Print("Введите второе число: ", false);
             int b = GetInt();
-            Print("Введите первое число: ", false);
+            Print("Введите третье число: ", false);
             int с = GetInt();
             
             Print($"Минимальное число: {MinNumberTerm(a, b, с)}.");//При помощи тернарного оператора
@@ -84,7 +84,11 @@ namespace Lesson_2_JulySudarenko_HomeWork
         private static void Task2()
         {
             Print("Введите число побольше: ", false);
-            ulong num = Convert.ToUInt64(Console.ReadLine());
+            ulong num;
+            while (!UInt64.TryParse(Console.ReadLine(), out num))
+            {
+                Print("Введите число: ");
+            }
             int count = 0;
             while (num != 0)
             {

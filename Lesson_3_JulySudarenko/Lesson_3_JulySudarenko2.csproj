@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{03BA14D0-325C-4FE5-B13F-17FFD6D1DB8F}</ProjectGuid>
+    <ProjectGuid>{B8EAF731-B76D-4641-B72C-7EA0113462A5}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>hwJulySudarenko</RootNamespace>
-    <AssemblyName>hwJulySudarenko</AssemblyName>
+    <RootNamespace>Lesson_3_JulySudarenko</RootNamespace>
+    <AssemblyName>Lesson_3_JulySudarenko</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
@@ -46,10 +46,13 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="..\.editorconfig">
-      <Link>.editorconfig</Link>
-    </None>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Task1_JulySudarenko\Lesson_2_JulySudarenko.csproj">
+      <Project>{25803d21-2982-44ff-aee2-c3e63a6b12a6}</Project>
+      <Name>Lesson_2_JulySudarenko</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

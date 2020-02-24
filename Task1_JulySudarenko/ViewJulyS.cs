@@ -19,18 +19,31 @@ namespace Lesson_2_CSharp_Lvl1
         
         public static int GetInt()
         {
-            return Int32.Parse(ReadLine());
+            int num;
+            while (!Int32.TryParse(ReadLine(), out num))
+            {
+                Print("Нужно ввести число: ");
+            }
+            return num;
         }
+
+        
         
         public static string GetString()
         {
             return ReadLine();
         }
-        
+
+        public static char GetChar()
+        {
+            return Convert.ToChar(ReadLine());
+        }
+
         public static void Pause()
         {
             ReadKey();
         }
+        
         public static void PrintXY(string message, int x, int y)
         {
             Console.SetCursorPosition(x, y);

@@ -7,6 +7,13 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lessson_1_JulySudarenko", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lesson_2_JulySudarenko", "Task1_JulySudarenko\Lesson_2_JulySudarenko.csproj", "{25803D21-2982-44FF-AEE2-C3E63A6B12A6}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{8D2F1037-001E-403E-9BDB-DB6133D157F5}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lesson_3_JulySudarenko", "Lesson_3_JulySudarenko_v2\Lesson_3_JulySudarenko.csproj", "{EECF2227-7D1B-4541-86D1-E94891DADB86}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +28,10 @@ Global
 		{25803D21-2982-44FF-AEE2-C3E63A6B12A6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{25803D21-2982-44FF-AEE2-C3E63A6B12A6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{25803D21-2982-44FF-AEE2-C3E63A6B12A6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EECF2227-7D1B-4541-86D1-E94891DADB86}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EECF2227-7D1B-4541-86D1-E94891DADB86}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EECF2227-7D1B-4541-86D1-E94891DADB86}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EECF2227-7D1B-4541-86D1-E94891DADB86}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
