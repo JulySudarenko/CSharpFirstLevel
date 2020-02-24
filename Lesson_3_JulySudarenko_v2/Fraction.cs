@@ -30,7 +30,7 @@ namespace Lesson_3_CSharp_Lvl1
 
         public Fraction(int nm, int dn)
         {
-            //Если сразу ввести проверку, то уже не надо отслеживать значения в примерах.
+            //Если сразу ввести проверку, то уже не надо отслеживать значения в примерах. (Кроме деления)
             //У меня не получилось здесь вставить ArgumentException.
             
             while (dn == 0)
@@ -66,7 +66,7 @@ namespace Lesson_3_CSharp_Lvl1
             Fraction y = new Fraction();
             y.nm = nm * x.nm;
             y.dn = dn * x.dn;
-            return y;
+            return Simple(y);
         }
         
         
@@ -77,8 +77,7 @@ namespace Lesson_3_CSharp_Lvl1
             Fraction y = new Fraction();
             y.nm = nm * x.dn;
             y.dn = dn * x.nm;
-            return y;
-
+            return Simple(y);
         }
         
         
@@ -98,7 +97,7 @@ namespace Lesson_3_CSharp_Lvl1
                 y.dn = dn * x.dn;
             }
             
-            return y;
+            return Simple(y);
         }
 
 
@@ -117,7 +116,7 @@ namespace Lesson_3_CSharp_Lvl1
                 y.nm = nm * x.dn - dn * x.nm;
                 y.dn = dn * x.dn;
             }
-            return y;
+            return Simple(y);
         }
 
 
@@ -129,7 +128,7 @@ namespace Lesson_3_CSharp_Lvl1
             y.nm = -1 * x.nm;
             y.dn = x.dn;
             Fraction z = Plus(y);
-            return z;
+            return Simple(z);
         }
 
         //Перевод в десятичные дроби
@@ -151,24 +150,22 @@ namespace Lesson_3_CSharp_Lvl1
 
         //Упрощение
 
-        public Fraction Simple(ref Fraction x) 
+        public Fraction Simple(Fraction x) 
         {
-            int i = 1;
-            while ((nm > i) || (dn > i))
+            Fraction y = new Fraction();
+            y.nm = x.nm;
+            y.dn = x.dn;
+            int i = 2;
+            while ((y.nm > i) || (y.dn > i))
             {
-                if ((nm % i == 0) && (dn % i == 0))
+                while ((y.nm % i == 0) && (y.dn % i == 0))
                 {
-                    nm /= i;
-                    dn /= i;
-                    i++;
+                    y.nm /= i;
+                    y.dn /= i;
                 }
-                else
-                    i++;
+                i++;
             }
-            return x;
-         
+            return y;
         }
-
-
     }
 }

@@ -14,9 +14,9 @@ namespace Lesson_3_JulySudarenko
     {
         static void Main()
         {
-            //TaskClassComplex();
-            //TaskStructCompleks();
-            //Task2();
+            TaskClassComplex();
+            TaskStructCompleks();
+            Task2();
             Task3();
             Pause();
 
@@ -172,11 +172,10 @@ namespace Lesson_3_JulySudarenko
         private static void Task3()
         {
 
-            Fraction f0 = new Fraction(1, 0); //Для проверки на ввод нулевого знаменателя.
             Fraction f1 = new Fraction(1, 2); //Для сложения, вычитания, умножения, деления.
             Fraction f2 = new Fraction(1, 4); //Для сложения, вычитания, умножения, деления.
-            Fraction f3 = new Fraction(78, 108); //Для упрощения.
-            Fraction f4 = new Fraction(0, 5); //Для деления.
+            Fraction f3 = new Fraction(30, 150); //Для упрощения.
+            //Fraction f4 = new Fraction(0, 5); //Для деления. Проверка на 0.
             
             Fraction resultMultiPlus = f1.MultiPlus(f2);
             Fraction resultDivide = f1.Divide(f2);
@@ -199,19 +198,16 @@ namespace Lesson_3_JulySudarenko
             Print($"Результат вычитания другим способом: {resultMinus1.FractionToString()}.");
 
 
-            Print(f3.FractionToString());
-            Fraction resultSimple = f3.Simple(ref f3);
-            Print($"Результат упрощения: {resultSimple.FractionToString()}.");
+            Fraction resultSimple = f3.Simple(f3);
+            Print($"Введена дробь: {f3.FractionToString()}. Результат упрощения: {resultSimple.FractionToString()}.");
 
             Print($"Вывод в десятичном формате: {resultDecimal1:f}, {resultDecimal2:f} и {resultDecimal3:f}.");
 
             Print("Проверка на 0.");
-            Print(f0.FractionToString());
+            Fraction f0 = new Fraction(1, 0); //Для проверки на ввод нулевого знаменателя.
+            Print($"Введена дробь: {f0.FractionToString()}.");
             
-            Print(f4.FractionToString());
-
+            //Print(f4.FractionToString());
         }
-
-
     }
 }
