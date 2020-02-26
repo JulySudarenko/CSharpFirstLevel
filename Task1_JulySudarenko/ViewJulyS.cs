@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using static System.Console;//далее можно не писать Console.
 
 namespace Lesson_2_CSharp_Lvl1

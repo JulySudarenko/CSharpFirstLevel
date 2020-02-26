@@ -1,10 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using static Lesson_2_CSharp_Lvl1.ViewJulyS;
-using static Lesson_2_CSharp_Lvl1.UsefulForJulyS;
 
 namespace Lesson_3_CSharp_Lvl1
 {
@@ -30,24 +25,13 @@ namespace Lesson_3_CSharp_Lvl1
 
         public Fraction(int nm, int dn)
         {
-            //Если сразу ввести проверку, то уже не надо отслеживать значения в примерах. (Кроме деления)
-            //У меня не получилось здесь вставить ArgumentException.
-            
-            while (dn == 0)
-            {
-                Print("Знаменатель не может быть равен 0! Введите другое значение");
-                dn = GetInt();
-            }
+            //while (dn == 0)
+            //{
+            //    Print("Знаменатель не может быть равен 0! Введите другое значение");
+            //    dn = GetInt();
+            //}
             this.nm = nm;
             this.dn = dn;
-            //try
-            //{
-            //    this.dn = dn;
-            //}
-            //catch (ArgumentNullException)
-            //{
-            //    Console.WriteLine("Знаменатель не может быть равен 0!", this.dn);
-            //}
         }
         
         
@@ -135,16 +119,28 @@ namespace Lesson_3_CSharp_Lvl1
 
         public static double FractionDecimal(Fraction x)
         {
-            //double fr = 0.0d;
-            //try
-            //{
-            //    fr = Convert.ToDouble(x.nm) / Convert.ToDouble(x.dn);
-            //}
-            //catch (DivideByZeroException)
-            //{
-            //    Print("Знаменатель не может быть равен 0!");
-            //}
             return Convert.ToDouble(x.nm) / Convert.ToDouble(x.dn);
+        }
+
+
+        public static double FractionDecimalEx()
+        {
+            Fraction y = new Fraction();
+            y.nm = GetInt();
+            y.dn = GetInt();
+            int fr = 0;
+
+            try
+            {
+                fr = y.nm / y.dn;
+                Print(fr);
+            }
+            catch (DivideByZeroException e)
+            {
+                Print(e.Message);// Не могу понять почему не выдает мое сообщение.
+                //throw new DivideByZeroException("Знаменатель не может быть равен 0!");
+            }
+            return fr;
         }
 
 

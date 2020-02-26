@@ -14,9 +14,9 @@ namespace Lesson_3_JulySudarenko
     {
         static void Main()
         {
-            TaskClassComplex();
-            TaskStructCompleks();
-            Task2();
+            //TaskClassComplex();
+            //TaskStructCompleks();
+            //Task2();
             Task3();
             Pause();
 
@@ -183,11 +183,6 @@ namespace Lesson_3_JulySudarenko
             Fraction resultMinus = f1.Minus(f2);
             Fraction resultMinus1 = f1.Minus1(f2);
             
-            double resultDecimal1 = FractionDecimal(f1);
-            double resultDecimal2 = FractionDecimal(f2);
-            double resultDecimal3 = FractionDecimal(f3);
-
-
             Print("Введены две дроби: ");
             Print(f1.FractionToString());
             Print(f2.FractionToString());
@@ -198,16 +193,18 @@ namespace Lesson_3_JulySudarenko
             Print($"Результат вычитания другим способом: {resultMinus1.FractionToString()}.");
 
 
+
             Fraction resultSimple = f3.Simple(f3);
             Print($"Введена дробь: {f3.FractionToString()}. Результат упрощения: {resultSimple.FractionToString()}.");
-
+            
+            double resultDecimal1 = FractionDecimal(f1);
+            double resultDecimal2 = FractionDecimal(f2);
+            double resultDecimal3 = FractionDecimal(f3);
             Print($"Вывод в десятичном формате: {resultDecimal1:f}, {resultDecimal2:f} и {resultDecimal3:f}.");
 
             Print("Проверка на 0.");
-            Fraction f0 = new Fraction(1, 0); //Для проверки на ввод нулевого знаменателя.
-            Print($"Введена дробь: {f0.FractionToString()}.");
+            FractionDecimalEx();
             
-            //Print(f4.FractionToString());
         }
     }
 }
