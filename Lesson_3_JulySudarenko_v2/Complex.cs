@@ -1,10 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using static Lesson_2_CSharp_Lvl1.ViewJulyS;
-using static Lesson_2_CSharp_Lvl1.UsefulForJulyS;
 
 namespace Lesson_3_CSharp_Lvl1
 {
