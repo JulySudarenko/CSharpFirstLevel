@@ -1,0 +1,10 @@
+D:\geekbrains.ru\Projects\Lvl1_JulySudarenko\hwJulySudarenko\Lesson_5_JulySudarenko\bin\Debug\Lesson_5_JulySudarenko.exe.config
+D:\geekbrains.ru\Projects\Lvl1_JulySudarenko\hwJulySudarenko\Lesson_5_JulySudarenko\bin\Debug\Lesson_5_JulySudarenko.exe
+D:\geekbrains.ru\Projects\Lvl1_JulySudarenko\hwJulySudarenko\Lesson_5_JulySudarenko\bin\Debug\Lesson_5_JulySudarenko.pdb
+D:\geekbrains.ru\Projects\Lvl1_JulySudarenko\hwJulySudarenko\Lesson_5_JulySudarenko\bin\Debug\Task1_JulySudarenko.exe
+D:\geekbrains.ru\Projects\Lvl1_JulySudarenko\hwJulySudarenko\Lesson_5_JulySudarenko\bin\Debug\Task1_JulySudarenko.pdb
+D:\geekbrains.ru\Projects\Lvl1_JulySudarenko\hwJulySudarenko\Lesson_5_JulySudarenko\bin\Debug\Task1_JulySudarenko.exe.config
+D:\geekbrains.ru\Projects\Lvl1_JulySudarenko\hwJulySudarenko\Lesson_5_JulySudarenko\obj\Debug\Lesson_5_JulySudarenko.csprojAssemblyReference.cache
+D:\geekbrains.ru\Projects\Lvl1_JulySudarenko\hwJulySudarenko\Lesson_5_JulySudarenko\obj\Debug\Lesson_5_JulySudarenko.csproj.CopyComplete
+D:\geekbrains.ru\Projects\Lvl1_JulySudarenko\hwJulySudarenko\Lesson_5_JulySudarenko\obj\Debug\Lesson_5_JulySudarenko.exe
+D:\geekbrains.ru\Projects\Lvl1_JulySudarenko\hwJulySudarenko\Lesson_5_JulySudarenko\obj\Debug\Lesson_5_JulySudarenko.pdb

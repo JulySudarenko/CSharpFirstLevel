@@ -71,17 +71,21 @@ namespace Lesson_4_CSharp_Lvl1
             int i = 0;
             while (i < array.Length - 1)
             {
-
-                if (((array[i] % 3 != 0) && (array[i + 1] % 3 == 0)) || ((array[i] % 3 == 0) && (array[i + 1] % 3 != 0)))
-                {
+                if (Term(array[i], array[i + 1]))
                     count++;
-                    i++;
-                }
-                else
-                    i++;
+                i++;
             }
             return count;
         }
+
+        private static bool Term(int a, int b)
+        {
+            if (((a % 3 != 0) && (b % 3 == 0)) || ((a % 3 == 0) && (b % 3 != 3)))
+                return true;
+            else
+                return false;
+        }
+
 
     #endregion
 
