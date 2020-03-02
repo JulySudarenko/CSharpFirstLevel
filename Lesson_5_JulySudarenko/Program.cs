@@ -1,8 +1,9 @@
 ﻿using System;
 using static Lesson_2_CSharp_Lvl1.ViewJulyS;
-using System.Text;
+using System.Text.RegularExpressions;
 using static Lesson_5_CSharp_Lvl1.Message;
 using Lesson_5_CSharp_Lvl1;
+using System.IO;
 
 namespace Lesson_5_JulySudarenko
 {
@@ -71,6 +72,9 @@ namespace Lesson_5_JulySudarenko
 
             if (check == true)
                 Print("Логин принят.");
+
+            Print("Проверка при помощи регулярных выражений.");
+            LoginReg(login);
         }
 
         private static bool CheckSymbols(string login)
@@ -83,10 +87,18 @@ namespace Lesson_5_JulySudarenko
             return true;
         }
 
+        private static void LoginReg(string login)
+        {
+            Regex reg = new Regex("^[A-Za-z]{1}[A-Za-z^0-9]{1,9}");
+            if (reg.IsMatch(login) == true)
+                Print("Логин принят.");
+            else
+                Print("Логин не корректен.");
+        }
+
 
         #endregion
-
-
+        
         #region Task2
         /// <summary>
         /// 2. Разработать статический класс Message, содержащий следующие статические методы для обработки текста: 
@@ -125,7 +137,7 @@ namespace Lesson_5_JulySudarenko
             Print("Самые длинные слова в тексте: ");
             BigWords(mesLong);
 
-            //Dictionary()
+
 
             #region Пример из методички
             //string m = "Четыре черненьких чумазеньких чертенка чертили черными чернилами чертёж";
@@ -162,19 +174,68 @@ namespace Lesson_5_JulySudarenko
             string word2 = "lab";
             string word3 = "blal";
 
-            //SortLetters(word1);
-            Print(string.CompareOrdinal(word1, word3));
+            Print("Проверяем первым способом:");
+            Print(SortLetters(word1, word3));
+            Print(SortLetters(word1, word2));
+
+            Print("Проверяем вторым способом:");
+            Print(SortLetters1(word1, word3));
+            Print(SortLetters1(word1, word2));
         }
 
-        private static void SortLetters(string word)
+        #region Перевод в числовой массив.
+        private static int[] WordToIntArray(string word)
         {
-            //char[] sortword = word;
+            char[] w = word.ToCharArray();
+            int[] codeW = new int[w.Length];
+
+            for (int i = 0; i < w.Length; i++)
+            {
+                codeW[i] = (int)(w[i]);
+            }
+            Array.Sort(codeW);
+
+            return codeW;
         }
-    
+        #endregion
+
+        private static bool SortLetters(string word1, string word2)
+        {
+            char[] w1 = word1.ToCharArray();
+            char[] w2 = word2.ToCharArray();
+
+            Array.Sort(w1);
+            Array.Sort(w2);
+
+            string wordSort1 = new string(w1);
+            string wordSort2 = new string(w2);
+
+            if (wordSort1.Equals(wordSort2))
+                return true;
+            else
+                return false;
+        }
+
+        private static bool SortLetters1(string word1, string word2)
+        {
+            char[] w1 = word1.ToCharArray();
+            char[] w2 = word2.ToCharArray();
+
+            Array.Sort(w1);
+            Array.Sort(w2);
+
+            if (w1.Length != w2.Length)
+                return false;
+
+            for (int i = 0; i < w1.Length; i++)
+                if (w1[i] != w2[i])
+                    return false;
+
+            return true;
+        }
 
 
 
-    
 
         #endregion
 
@@ -196,16 +257,66 @@ namespace Lesson_5_JulySudarenko
         /// Если среди остальных есть ученики, 
         /// набравшие тот же средний балл, что и один из трёх худших, 
         /// следует вывести и их фамилии и имена.
-        /// Для решения задач используйте неизменяемые строки (string).
         /// </summary>
         private static void Task4()
         {
-            Print(" ");
+            Exam[] a = Exam.FromFile("..\\..\\Exam.txt");
+            
+            for (int i = 0; i < a.Length; i++)
+                for (int j = 0; j < a.Length -1; j++)
+                    if (a[j].rate > a[j + 1].rate)
+                    {
+                        Exam t = a[j];
+                        a[j] = a[j + 1];
+                        a[j + 1] = t;
+                    }
+            
+            Print("Результат сортировки:");
+            for (int i = 0; i < a.Length; i++)
+                Print($"{a[i].name} {a[i].rate}");
+
+            int toList = a[3].rate;
+
+            Print("Список худших учеников:");
+            for (int i = 0; i < a.Length; i++)
+                if(a[i].rate <= toList)
+                    Print(a[i].name);
+
         }
 
         #endregion
     }
+
+    #region Struct Exam
+
+    public struct Exam
+    {
+        public string name;
+        public int rate;
+
+        public static Exam[] FromFile(string path)
+        {
+            StreamReader sr = new StreamReader(path);
+            int n = File.ReadAllLines(path).Length;
+            Exam[] a = new Exam[n];
+            Print("Данные на входе:");
+            for (int i = 0; i < n; i++)
+            {
+                string[] s = sr.ReadLine().Split(' ');
+                a[i].name = $"{s[0]} {s[1]}";
+                a[i].rate = int.Parse(s[2]) + int.Parse(s[3]) + int.Parse(s[4]);
+                Print($"{a[i].name} {a[i].rate}");
+            }
+
+            sr.Close();
+
+            return a;
+        }
+
+
+    }
+    #endregion
 }
-    
- 
+
+
 

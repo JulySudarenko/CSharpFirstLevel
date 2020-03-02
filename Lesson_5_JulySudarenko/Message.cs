@@ -44,15 +44,15 @@ namespace Lesson_5_CSharp_Lvl1
             return _mes;
         }
 
-        public string[] Split(char[] a)
-        {
-            return _mes.Split(a);
-        }
-
         public string Join(string[] str)
         {
             _mes = String.Join(" ", str);
             return _mes;
+        }
+
+        public string[] Split(char[] a)
+        {
+            return _mes.Split(a);
         }
 
         public string[] SplitWords(Message mes)
@@ -61,19 +61,12 @@ namespace Lesson_5_CSharp_Lvl1
             return mes.Split(gap);
         }
 
-        #region Concat Не работает
-        //public string Concat(string c) 
-        //{
-        //    _mes = String.Concat(_mes, c);
-        //    return _mes;
-        //}
-        #endregion
-
         public static void CountLetters(Message mes, int n)
         {
 
             string[] parts = mes.SplitWords(mes);
             string str = "";
+
             for (int i = 0; i < parts.Length; i++)
             {
                 if (parts[i].Length <= n)
@@ -87,14 +80,12 @@ namespace Lesson_5_CSharp_Lvl1
         public static void LastLetter(Message mes, string letter)
         {
             string[] parts = mes.SplitWords(mes);
-            //Message str = new Message("");
             string str = "";
 
             for (int i = 0; i < parts.Length; i++)
             {
                 if (!parts[i].EndsWith(letter))
                 {
-                    //str = str.Concat(r); Не получается собрать обратно в message (
                     str = $"{str} {parts[i]}";
                 }
                 
@@ -134,7 +125,7 @@ namespace Lesson_5_CSharp_Lvl1
         {
             string[] parts = mes.SplitWords(mes);
             int max = Max(mes);
-            StringBuilder str = new StringBuilder(parts.Length);
+            StringBuilder str = new StringBuilder(20);
             
             for (int i = 1; i < parts.Length; i++)
             {
