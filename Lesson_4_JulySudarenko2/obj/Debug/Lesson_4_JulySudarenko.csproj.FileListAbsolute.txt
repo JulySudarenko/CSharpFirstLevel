@@ -1,0 +1,3 @@
+D:\geekbrains.ru\Projects\Lvl1_JulySudarenko\hwJulySudarenko\Lesson_4_JulySudarenko2\obj\Debug\Lesson_4_JulySudarenko.csprojAssemblyReference.cache
+D:\geekbrains.ru\Projects\Lvl1_JulySudarenko\hwJulySudarenko\Lesson_4_JulySudarenko2\obj\Debug\Lesson_4_JulySudarenko2.exe
+D:\geekbrains.ru\Projects\Lvl1_JulySudarenko\hwJulySudarenko\Lesson_4_JulySudarenko2\obj\Debug\Lesson_4_JulySudarenko2.pdb

@@ -234,9 +234,6 @@ namespace Lesson_5_JulySudarenko
             return true;
         }
 
-
-
-
         #endregion
 
         #region Task4

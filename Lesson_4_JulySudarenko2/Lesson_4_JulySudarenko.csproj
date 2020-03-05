@@ -50,6 +50,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\JulyArrayLibrary\JulyArrayLibrary.csproj">
+      <Project>{3689ed4f-8ec0-4aa6-9163-2c5dbd88b2fe}</Project>
+      <Name>JulyArrayLibrary</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Task1_JulySudarenko\Lesson_2_JulySudarenko.csproj">
       <Project>{25803d21-2982-44ff-aee2-c3e63a6b12a6}</Project>
       <Name>Lesson_2_JulySudarenko</Name>
