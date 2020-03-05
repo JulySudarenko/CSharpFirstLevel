@@ -50,6 +50,11 @@ namespace Lesson_5_CSharp_Lvl1
             return _mes;
         }
 
+        //public string Concat(string str)
+        //{
+        //    return _mes.Concat(str);
+        //}
+        
         public string[] Split(char[] a)
         {
             return _mes.Split(a);
@@ -61,11 +66,13 @@ namespace Lesson_5_CSharp_Lvl1
             return mes.Split(gap);
         }
 
+        
+
         public static void CountLetters(Message mes, int n)
         {
 
             string[] parts = mes.SplitWords(mes);
-            string str = "";
+            string str = String.Empty;
 
             for (int i = 0; i < parts.Length; i++)
             {
@@ -80,7 +87,7 @@ namespace Lesson_5_CSharp_Lvl1
         public static void LastLetter(Message mes, string letter)
         {
             string[] parts = mes.SplitWords(mes);
-            string str = "";
+            string str = String.Empty;
 
             for (int i = 0; i < parts.Length; i++)
             {

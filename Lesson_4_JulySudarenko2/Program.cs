@@ -27,7 +27,7 @@ namespace Lesson_4_JulySudarenko
                     Task3();
                     break;
                 case 4:
-                    Task4();
+                    Task4S();
                     break;
                 default:
                     Print("Такая операция не предусмотрена.");
@@ -123,8 +123,7 @@ namespace Lesson_4_JulySudarenko
 
         private static void Task2()
         {
-            SingleLevelArray arr1;
-            arr1 = new SingleLevelArray(20, -10000, 10000);
+            SingleLevelArray arr1 = new SingleLevelArray(20, -10000, 10000);
             Print("Целочисленный массив из 20 элементов от -10 000 до 10 000");
             Print(arr1);
             
@@ -206,6 +205,70 @@ namespace Lesson_4_JulySudarenko
                 Print("В доступе отказано");
         }
 
+        private static void Task4S()
+        {
+            AccountF[] users = AccountF.FromFile("..\\..\\AccountF.txt");
+            AccountF user1 = new AccountF();
+            int count = 3;
+            bool v = AccountF.CheckAccountF(users, user1, count);
+
+            if (v == true)
+                Print("Доступ разрешен");
+            else
+                Print("В доступе отказано");
+
+        }
+        struct AccountF
+        {
+            public string login;
+            public string password;
+
+            public AccountF(string log, string pas)
+            {
+                login = log;
+                password = pas;
+            }
+
+            public static AccountF[] FromFile(string path)
+            {
+                StreamReader sr = new StreamReader(path);
+                int n = File.ReadAllLines(path).Length;
+                AccountF[] a = new AccountF[n];
+                
+                Print("Данные на входе:");
+                for (int i = 0; i < n; i++)
+                {
+                    string[] s = sr.ReadLine().Split(' ');
+                    a[i].login = s[0];
+                    a[i].password = s[1];
+                    Print($"{a[i].login} {a[i].password}");
+                }
+
+                sr.Close();
+
+                return a;
+            }
+
+            public static bool CheckAccountF(AccountF[] users, AccountF user, int count)
+            {
+                Print("Введите логин: ", false);
+                user.login = GetString();
+                Print("Введите пароль: ", false);
+                user.password = GetString();
+
+                for (int i = 0; i < users.Length; i++)
+                    if ((user.login == users[i].login) && (user.password == users[i].password))
+                        return true;
+                if (count > 1)
+                {
+                    Print("Не верно. Попробуйте еще раз.");
+                    return CheckAccountF(users, user, count - 1);
+                }
+                else
+                    return false;
+            }
+
+        }
 
         struct Account
         {
@@ -233,7 +296,7 @@ namespace Lesson_4_JulySudarenko
                     int l = File.ReadAllLines(path).Length;
                     user1 = new Account(l);
 
-                    for (int i = 0; i < File.ReadAllLines(path).Length; i++)
+                    for (int i = 0; i < l; i++)
                     {
                         user1[i] = sr.ReadLine();
                     }

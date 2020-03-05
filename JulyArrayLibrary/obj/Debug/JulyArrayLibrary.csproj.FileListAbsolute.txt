@@ -1,0 +1,9 @@
+D:\geekbrains.ru\Projects\Lvl1_JulySudarenko\hwJulySudarenko\JulyArrayLibrary\bin\Debug\JulyArrayLibrary.dll
+D:\geekbrains.ru\Projects\Lvl1_JulySudarenko\hwJulySudarenko\JulyArrayLibrary\bin\Debug\JulyArrayLibrary.pdb
+D:\geekbrains.ru\Projects\Lvl1_JulySudarenko\hwJulySudarenko\JulyArrayLibrary\bin\Debug\Task1_JulySudarenko.exe
+D:\geekbrains.ru\Projects\Lvl1_JulySudarenko\hwJulySudarenko\JulyArrayLibrary\bin\Debug\Task1_JulySudarenko.pdb
+D:\geekbrains.ru\Projects\Lvl1_JulySudarenko\hwJulySudarenko\JulyArrayLibrary\bin\Debug\Task1_JulySudarenko.exe.config
+D:\geekbrains.ru\Projects\Lvl1_JulySudarenko\hwJulySudarenko\JulyArrayLibrary\obj\Debug\JulyArrayLibrary.csprojAssemblyReference.cache
+D:\geekbrains.ru\Projects\Lvl1_JulySudarenko\hwJulySudarenko\JulyArrayLibrary\obj\Debug\JulyArrayLibrary.csproj.CopyComplete
+D:\geekbrains.ru\Projects\Lvl1_JulySudarenko\hwJulySudarenko\JulyArrayLibrary\obj\Debug\JulyArrayLibrary.dll
+D:\geekbrains.ru\Projects\Lvl1_JulySudarenko\hwJulySudarenko\JulyArrayLibrary\obj\Debug\JulyArrayLibrary.pdb
