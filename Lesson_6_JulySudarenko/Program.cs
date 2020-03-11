@@ -232,7 +232,7 @@ namespace Lesson_6_JulySudarenko
             int courseRange = 0;
             List<Student> list = new List<Student>();
             DateTime dt = DateTime.Now;
-            StreamReader sr = new StreamReader("..\\students_6.csv", Encoding.GetEncoding(1251));
+            StreamReader sr = new StreamReader("..\\students_1.csv", Encoding.GetEncoding(1251));
             while (!sr.EndOfStream)
             {
                 try
@@ -266,8 +266,11 @@ namespace Lesson_6_JulySudarenko
             sr.Close();
 
             list.Sort(new Comparison<Student>(MyDelegat));
-            list.Sort(new Comparison<Student>(CompareCourse));
-            list.Sort(new Comparison<Student>(CompareAge));
+
+            SortStudents(list, SortCourseDel);
+            SortStudents(list, SortAgeDel);
+            //list.Sort(new Comparison<Student>(CompareCourse));
+            //list.Sort(new Comparison<Student>(CompareAge));
             
             Print($"Всего студентов: {list.Count}");
             Print($"Учащихся на 5-6 курсах: {courseRange}");
@@ -319,7 +322,7 @@ namespace Lesson_6_JulySudarenko
                 this.city = city;
             }
         }
-        
+
         static int MyDelegat(Student st1, Student st2)          
         {
             return String.Compare(st1.firstName, st2.firstName);    // Сравниваем две строки
@@ -338,6 +341,38 @@ namespace Lesson_6_JulySudarenko
             return 0;
         }
 
+        private delegate bool SortStudent(Student st1, Student st2);
+
+        private static bool SortCourseDel(Student st1, Student st2)
+        {
+            if (st1.course > st2.course) 
+                return true;
+            else 
+                return false;
+        }
+
+        private static bool SortAgeDel(Student st1, Student st2)
+        {
+            if (st1.age > st2.age)
+                return true;
+            else
+                return false;
+        }
+        
+        static void SortStudents(List<Student> list, SortStudent St)
+        {
+            for (int i = 0; i < list.Count; i++)
+                for (int j = 0; j < list.Count - 1; j++)
+                {
+                    if (St(list[j], list[j+1]))
+                    {
+                        Student t = list[j];
+                        list[j] = list[j + 1];
+                        list[j + 1] = t;
+                    }
+                }
+        }
+
         #endregion
 
         #region Task4 Не делала
@@ -348,7 +383,7 @@ namespace Lesson_6_JulySudarenko
         /// строку для StreamReader 
         /// и массив int для BinaryReader.
         /// </summary>
-        
+
         private static void Task4()
         {
             Print(" ");
