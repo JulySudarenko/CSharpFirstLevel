@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using static Lesson_2_CSharp_Lvl1.ViewJulyS;
 using System.IO;
+using System.Reflection;
 
 
 namespace Lesson_6_JulySudarenko
@@ -16,7 +17,7 @@ namespace Lesson_6_JulySudarenko
             switch (c)
             {
                 case 1:
-                    Task1();
+                    TaskM();
                     break;
                 case 2:
                     Task2();
@@ -389,10 +390,40 @@ namespace Lesson_6_JulySudarenko
             Print(" ");
         }
 
-
-
-
         #endregion
+        
+        static void TaskM()
+        {
+            // Используется для получения объекта System.Type для типа.
+            // Выражение typeof принимает следующую форму:
+            Type type = typeof(int);
+           Print(type);
+            // Для получения типа выражения во время выполнения можно 
+            // воспользоваться методом платформы.NET GetType, как показано в следующем примере:
+            int i = 0;
+            Type type2 = i.GetType();
+            Print(type2);
+
+            DateTime dateTime = new DateTime();
+            //dateTime.DayOfWeek
+            Console.WriteLine(GetPropertyInfo(dateTime, "DayOfWeek").CanRead);
+            Console.WriteLine(GetPropertyInfo(dateTime, "DayOfWeek").CanWrite);
+            Console.WriteLine(GetPropertyInfo(dateTime, "DayOfWeek").GetValue(dateTime, null));
+            Console.ReadKey();
+
+            Type type3 = dateTime.GetType();
+            //Console.WriteLine(GetPropertyInfo(dateTime, );
+            Print(type3);
+
+        }
+
+        static PropertyInfo GetPropertyInfo(object obj, string str)
+        {
+            return obj.GetType().GetProperty(str);
+        }
+
+
+
 
     }
 }
