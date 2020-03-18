@@ -1,0 +1,13 @@
+D:\geekbrains.ru\Projects\Lvl1_JulySudarenko\hwJulySudarenko\Lesson_8_JulySudarenko\obj\Debug\Lesson_8_JulySudarenko.csprojAssemblyReference.cache
+D:\geekbrains.ru\Projects\Lvl1_JulySudarenko\hwJulySudarenko\Lesson_8_JulySudarenko\obj\Debug\Lesson_8_JulySudarenko.BelieveOrNotBelieveForm.resources
+D:\geekbrains.ru\Projects\Lvl1_JulySudarenko\hwJulySudarenko\Lesson_8_JulySudarenko\obj\Debug\Lesson_8_JulySudarenko.Properties.Resources.resources
+D:\geekbrains.ru\Projects\Lvl1_JulySudarenko\hwJulySudarenko\Lesson_8_JulySudarenko\obj\Debug\Lesson_8_JulySudarenko.csproj.GenerateResource.cache
+D:\geekbrains.ru\Projects\Lvl1_JulySudarenko\hwJulySudarenko\Lesson_8_JulySudarenko\bin\Debug\Lesson_8_JulySudarenko.exe.config
+D:\geekbrains.ru\Projects\Lvl1_JulySudarenko\hwJulySudarenko\Lesson_8_JulySudarenko\bin\Debug\Lesson_8_JulySudarenko.exe
+D:\geekbrains.ru\Projects\Lvl1_JulySudarenko\hwJulySudarenko\Lesson_8_JulySudarenko\bin\Debug\Lesson_8_JulySudarenko.pdb
+D:\geekbrains.ru\Projects\Lvl1_JulySudarenko\hwJulySudarenko\Lesson_8_JulySudarenko\obj\Debug\Lesson_8_JulySudarenko.exe
+D:\geekbrains.ru\Projects\Lvl1_JulySudarenko\hwJulySudarenko\Lesson_8_JulySudarenko\obj\Debug\Lesson_8_JulySudarenko.pdb
+D:\geekbrains.ru\Projects\Lvl1_JulySudarenko\hwJulySudarenko\Lesson_8_JulySudarenko\obj\Debug\Lesson_8_JulySudarenko.AboutProgram.resources
+D:\geekbrains.ru\Projects\Lvl1_JulySudarenko\hwJulySudarenko\Lesson_8_JulySudarenko\obj\Debug\Lesson_8_JulySudarenko.Task2.resources
+D:\geekbrains.ru\Projects\Lvl1_JulySudarenko\hwJulySudarenko\Lesson_8_JulySudarenko\obj\Debug\Lesson_8_JulySudarenko.Task1.resources
+D:\geekbrains.ru\Projects\Lvl1_JulySudarenko\hwJulySudarenko\Lesson_8_JulySudarenko\obj\Debug\Lesson_8_JulySudarenko.NotepadForm.resources

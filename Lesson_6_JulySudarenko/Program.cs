@@ -3,11 +3,12 @@ using System.Collections.Generic;
 using System.Text;
 using static Lesson_2_CSharp_Lvl1.ViewJulyS;
 using System.IO;
+using System.Xml.Serialization;
 
 
 namespace Lesson_6_JulySudarenko
 {
-    class Program
+    public class Program
     {
         static void Main()
         {
@@ -42,7 +43,7 @@ namespace Lesson_6_JulySudarenko
         /// и функцией a* sin(x).
         /// </summary>
 
-   #if false
+#if false
         // Описываем делегат. В делегате описывается сигнатура методов, на
         // которые он сможет ссылаться в дальнейшем (хранить в себе)
         public delegate double Fun(double x);
@@ -64,13 +65,13 @@ namespace Lesson_6_JulySudarenko
         {
             return x * x * x;
         }
-        #endif
-        
+#endif
+
 
 
         private static void Task1()
         {
-#region Пример делегатов из методички
+            #region Пример делегатов из методички
             //// Создаем новый делегат и передаем ссылку на него в метод Table
             //Console.WriteLine("Таблица функции MyFunc:");
             //// Параметры метода и тип возвращаемого значения, должны совпадать с делегатом
@@ -83,7 +84,7 @@ namespace Lesson_6_JulySudarenko
             //Console.WriteLine("Таблица функции x^2:");
             //// Упрощение(с C# 2.0). Использование анонимного метода
             //Table(delegate (double x) { return x * x; }, 0, 3);
-#endregion
+            #endregion
 
             Print("Новая таблица с функцией a* x^2:");
             TableFeature(MySquare, 2, -2, 2);
@@ -127,7 +128,7 @@ namespace Lesson_6_JulySudarenko
         /// 
 
         public delegate double FeatureMin(double x);
-        
+
         public static double Feature1(double x)
         {
             return x * x - 50 * x + 10;
@@ -142,7 +143,7 @@ namespace Lesson_6_JulySudarenko
         {
             return 3 * x - 8 * x * x;
         }
-        
+
         public static void SaveFeature(FeatureMin F, string fileName, double a, double b, double h)
         {
             FileStream fs = new FileStream(fileName, FileMode.Create, FileAccess.Write);
@@ -157,18 +158,18 @@ namespace Lesson_6_JulySudarenko
             bw.Close();
             fs.Close();
         }
-        
+
         public static double[] LoadFeature(string fileName, out double min)
         {
             FileStream fs = new FileStream(fileName, FileMode.Open, FileAccess.Read);
             BinaryReader bw = new BinaryReader(fs);
             min = double.MaxValue;
             long n = fs.Length / sizeof(double);
-            double[] y = new double [n];
+            double[] y = new double[n];
             for (int i = 0; i < n; i++)
             {
                 y[i] = bw.ReadDouble();
-                if (y[i] < min) 
+                if (y[i] < min)
                     min = y[i];
             }
             bw.Close();
@@ -195,7 +196,7 @@ namespace Lesson_6_JulySudarenko
             int[,] limit = new int[3, 2] { { -100, -25 }, { -25, 25 }, { 25, 100 } };
 
             int l;
-            do 
+            do
             {
                 Print("Выберите границы отрезка для нахождения минимума\n1: ( -100, -25 ) \n2: ( -25, 25 ) \n3: ( 25, 100 ): ");
                 l = GetInt() - 1;
@@ -203,9 +204,9 @@ namespace Lesson_6_JulySudarenko
 
 
             SaveFeature(FeatureArray[i], "data.bin", limit[l, 0], limit[l, 1], 0.5);
-            
+
             double[] y = LoadFeature("data.bin", out double min);
-            
+
             for (int j = 0; j < y.Length; j++)
                 Print(y[j]);
 
@@ -224,7 +225,7 @@ namespace Lesson_6_JulySudarenko
         /// г) *отсортировать список по курсу и возрасту студента;
         /// </summary>
 
-        private static void Task3()
+        public static void Task3()
         {
             int[] аgeRange = new int[21];
             int[] courseAge = new int[7];
@@ -232,6 +233,7 @@ namespace Lesson_6_JulySudarenko
             int courseRange = 0;
             List<Student> list = new List<Student>();
             DateTime dt = DateTime.Now;
+
             StreamReader sr = new StreamReader("..\\students_1.csv", Encoding.GetEncoding(1251));
             while (!sr.EndOfStream)
             {
@@ -246,24 +248,25 @@ namespace Lesson_6_JulySudarenko
 
                     if ((int.Parse(s[5]) >= 18) && (int.Parse(s[5]) <= 20))
                         аgeRange[int.Parse(s[5])]++;
-                    
+
                     if ((int.Parse(s[5]) >= 18) && (int.Parse(s[5]) <= 20))
                     {
                         courseAge[int.Parse(s[6])]++;
                         ageAllLim++;
                     }
-
                 }
                 catch (Exception e)
                 {
                     Console.WriteLine(e.Message);
                     Console.WriteLine("Ошибка!ESC - прекратить выполнение программы");
-                    if (Console.ReadKey().Key == ConsoleKey.Escape) 
+                    if (Console.ReadKey().Key == ConsoleKey.Escape)
                         return;
                 }
             }
 
             sr.Close();
+
+            ToXML("..\\students_1.csv", list);
 
             list.Sort(new Comparison<Student>(MyDelegat));
 
@@ -271,7 +274,7 @@ namespace Lesson_6_JulySudarenko
             SortStudents(list, SortAgeDel);
             //list.Sort(new Comparison<Student>(CompareCourse));
             //list.Sort(new Comparison<Student>(CompareAge));
-            
+
             Print($"Всего студентов: {list.Count}");
             Print($"Учащихся на 5-6 курсах: {courseRange}");
             Print($"Учащихся в возрасте от 18 до 20 лет: {ageAllLim} человек.");
@@ -286,7 +289,7 @@ namespace Lesson_6_JulySudarenko
                 if (аgeRange[j] != 0)
                     Print($"Студентов в возресте {j} лет: {аgeRange[j]} человекa.");
             }
-            
+
             for (int i = 0; i < list.Count; i++)
             {
                 Student v = list[i];
@@ -297,14 +300,14 @@ namespace Lesson_6_JulySudarenko
             Console.WriteLine(DateTime.Now - dt);
         }
 
-        class Student
+        public class Student
         {
             public string lastName;
             public string firstName;
             public string university;
             public string faculty;
             public string department;
-            public int age;           
+            public int age;
             public int course;
             public int group;
             public string city;
@@ -316,14 +319,18 @@ namespace Lesson_6_JulySudarenko
                 this.university = university;
                 this.faculty = faculty;
                 this.department = department;
-                this.age = age;                
+                this.age = age;
                 this.course = course;
                 this.group = group;
                 this.city = city;
             }
+
+            public Student()
+            { 
+            }
         }
 
-        static int MyDelegat(Student st1, Student st2)          
+        static int MyDelegat(Student st1, Student st2)
         {
             return String.Compare(st1.firstName, st2.firstName);    // Сравниваем две строки
         }
@@ -345,9 +352,9 @@ namespace Lesson_6_JulySudarenko
 
         private static bool SortCourseDel(Student st1, Student st2)
         {
-            if (st1.course > st2.course) 
+            if (st1.course > st2.course)
                 return true;
-            else 
+            else
                 return false;
         }
 
@@ -358,19 +365,33 @@ namespace Lesson_6_JulySudarenko
             else
                 return false;
         }
-        
+
         static void SortStudents(List<Student> list, SortStudent St)
         {
             for (int i = 0; i < list.Count; i++)
                 for (int j = 0; j < list.Count - 1; j++)
                 {
-                    if (St(list[j], list[j+1]))
+                    if (St(list[j], list[j + 1]))
                     {
                         Student t = list[j];
                         list[j] = list[j + 1];
                         list[j + 1] = t;
                     }
                 }
+        }
+        #region
+        /// <summary>
+        ///     5. **Написать программу-преобразователь 
+        ///     из CSV в XML-файл с информацией о студентах (6 урок).
+        /// </summary>
+        /// <param name="fileName"></param>
+        /// <param name="list"></param>
+        public static void ToXML(string fileName, List<Student> list)
+        {
+            XmlSerializer xmlFormat = new XmlSerializer(typeof(List<Student>));
+            Stream fStream = new FileStream(fileName, FileMode.Create, FileAccess.Write);
+            xmlFormat.Serialize(fStream, list);
+            fStream.Close();
         }
 
         #endregion
@@ -389,10 +410,8 @@ namespace Lesson_6_JulySudarenko
             Print(" ");
         }
 
-
-
-
         #endregion
+        
 
     }
 }

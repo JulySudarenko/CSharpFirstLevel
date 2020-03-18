@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<ArrayOfNotepadClass xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <NotepadClass>
+    <Text>Первая запись в блокноте.</Text>
+    <DateNote>2020-03-17T16:15:21.3780893+03:00</DateNote>
+  </NotepadClass>
+  <NotepadClass>
+    <Text>Вторая запись в блокноте.</Text>
+    <DateNote>2020-03-17T16:15:21.3780893+03:00</DateNote>
+  </NotepadClass>
+  <NotepadClass>
+    <Text>Третья запись в блокноте</Text>
+    <DateNote>2020-03-17T16:15:21.3780893+03:00</DateNote>
+  </NotepadClass>
+  <NotepadClass>
+    <Text>Третья запись. Все работает изменим дату.</Text>
+    <DateNote>2020-03-16T16:15:21</DateNote>
+  </NotepadClass>
+  <NotepadClass>
+    <Text>Запись за другую дату добавили без проблем.</Text>
+    <DateNote>2020-03-18T16:15:21</DateNote>
+  </NotepadClass>
+</ArrayOfNotepadClass>

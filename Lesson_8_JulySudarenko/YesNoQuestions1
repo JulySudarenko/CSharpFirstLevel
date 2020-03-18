@@ -1,0 +1,59 @@
+<?xml version="1.0"?>
+<ArrayOfQuestion xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Question>
+    <Text>Правда ли,  что утёнок считает мамой того, кого увидел первым после рождения?</Text>
+    <TrueFalse>true</TrueFalse>
+  </Question>
+  <Question>
+    <Text>Правда ли, что у осьминогов два сердца?</Text>
+    <TrueFalse>false</TrueFalse>
+  </Question>
+  <Question>
+    <Text>Правда ли, что черепахи плачут?</Text>
+    <TrueFalse>true</TrueFalse>
+  </Question>
+  <Question>
+    <Text>Правда ли, что сказку «Конек-горбунок» написал А.С. Пушкин?</Text>
+    <TrueFalse>false</TrueFalse>
+  </Question>
+  <Question>
+    <Text>Правда ли, что в мире есть растения, которые могут расти со скоростью 1 метр в день?</Text>
+    <TrueFalse>true</TrueFalse>
+  </Question>
+  <Question>
+    <Text>Правда ли, что самые первые машины были двухколесными?</Text>
+    <TrueFalse>false</TrueFalse>
+  </Question>
+  <Question>
+    <Text>Правда ли, что первый компьютер весил более 27 тонн и занимал целую комнату?</Text>
+    <TrueFalse>true</TrueFalse>
+  </Question>
+  <Question>
+    <Text>Правда ли, что в русском языке 10 гласных звуков?</Text>
+    <TrueFalse>false</TrueFalse>
+  </Question>
+  <Question>
+    <Text>Правда ли, что блины выпекают только из ржаной муки?</Text>
+    <TrueFalse>false</TrueFalse>
+  </Question>
+  <Question>
+    <Text>Правда ли, что слоны умеют высоко прыгать?</Text>
+    <TrueFalse>false</TrueFalse>
+  </Question>
+  <Question>
+    <Text>Правда ли, что если тигра побрить, он все-равно останется полосатым?</Text>
+    <TrueFalse>true</TrueFalse>
+  </Question>
+  <Question>
+    <Text>Правда ли, что белые медведи, ловя рыбу в проруби,  свой черный нос прикрывают лапой? </Text>
+    <TrueFalse>false</TrueFalse>
+  </Question>
+  <Question>
+    <Text>Правда ли, что у человека есть среднее ухо?</Text>
+    <TrueFalse>true</TrueFalse>
+  </Question>
+  <Question>
+    <Text>Правда ли, что почти никто в Греции не знает гимн своей страны наизусть?</Text>
+    <TrueFalse>true</TrueFalse>
+  </Question>
+</ArrayOfQuestion>
