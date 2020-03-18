@@ -10,3 +10,4 @@ D:\geekbrains.ru\Projects\Lvl1_JulySudarenko\hwJulySudarenko\Lesson_8_JulySudare
 D:\geekbrains.ru\Projects\Lvl1_JulySudarenko\hwJulySudarenko\Lesson_8_JulySudarenko\obj\Debug\Lesson_8_JulySudarenko.AboutProgram.resources
 D:\geekbrains.ru\Projects\Lvl1_JulySudarenko\hwJulySudarenko\Lesson_8_JulySudarenko\obj\Debug\Lesson_8_JulySudarenko.Task2.resources
 D:\geekbrains.ru\Projects\Lvl1_JulySudarenko\hwJulySudarenko\Lesson_8_JulySudarenko\obj\Debug\Lesson_8_JulySudarenko.Task1.resources
+D:\geekbrains.ru\Projects\Lvl1_JulySudarenko\hwJulySudarenko\Lesson_8_JulySudarenko\obj\Debug\Lesson_8_JulySudarenko.NotepadForm.resources

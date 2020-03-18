@@ -4,35 +4,35 @@ using System.Windows.Forms;
 using System.IO;
 using System.Xml.Serialization;
 
-namespace BelieveOrNotBelieve
+namespace Lesson_8_JulySudarenko
 {
-    class TrueFalse
+    public class NotepadList
     {
         string _fileName;
-        List<Question> list;
-        
+        List<NotepadClass> list;
+
         public string FileName
         {
             set => _fileName = value;
         }
-        
-        public TrueFalse(string fileName)
+
+        public NotepadList(string fileName)
         {
             _fileName = fileName;
-            list = new List<Question>();
+            list = new List<NotepadClass>();
         }
-        
-        public void Add(string text, bool trueFalse)
+
+        public void Add(string text, DateTime dateNote)
         {
-            list.Add(new Question(text, trueFalse));
+            list.Add(new NotepadClass(text, dateNote));
         }
-        
+
         public void Remove(int index)
         {
             if (list != null && index < list.Count && index >= 0) list.RemoveAt(index);
         }
 
-        public Question this[int index]
+        public NotepadClass this[int index]
         {
             get => list[index];
         }
@@ -46,7 +46,7 @@ namespace BelieveOrNotBelieve
         {
             try
             {
-                XmlSerializer xmlFormat = new XmlSerializer(typeof(List<Question>));
+                XmlSerializer xmlFormat = new XmlSerializer(typeof(List<NotepadClass>));
                 Stream fStream = new FileStream(_fileName, FileMode.Create, FileAccess.Write);
                 xmlFormat.Serialize(fStream, list);
                 fStream.Close();
@@ -74,14 +74,14 @@ namespace BelieveOrNotBelieve
             }
 
         }
-        
+
         public void Load()
         {
             try
             {
-                XmlSerializer xmlFormat = new XmlSerializer(typeof(List<Question>));
+                XmlSerializer xmlFormat = new XmlSerializer(typeof(List<NotepadClass>));
                 Stream fStream = new FileStream(_fileName, FileMode.Open, FileAccess.Read);
-                list = (List<Question>)xmlFormat.Deserialize(fStream);
+                list = (List<NotepadClass>)xmlFormat.Deserialize(fStream);
                 fStream.Close();
             }
             catch (ArgumentException e)
@@ -109,8 +109,5 @@ namespace BelieveOrNotBelieve
                 MessageBox.Show(e.ToString());
             }
         }
-
     }
-
 }
-
